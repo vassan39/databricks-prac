@@ -293,4 +293,8 @@ spark.conf.set("spark.sql.files.maxPartitionBytes","100M")
 
 # MAGIC %sql
 # MAGIC 
-# MAGIC select * from employees;
+# MAGIC merge into emp_data
+# MAGIC using emp_source
+# MAGIC on empno=empno
+# MAGIC when matched then update set *
+# MAGIC when not matched then insert *
