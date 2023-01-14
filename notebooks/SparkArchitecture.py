@@ -298,3 +298,7 @@ spark.conf.set("spark.sql.files.maxPartitionBytes","100M")
 # MAGIC on empno=empno
 # MAGIC when matched then update set *
 # MAGIC when not matched then insert *
+
+# COMMAND ----------
+
+df=spark.createDataFrame([("ravi",1000),("rohith",2000)],("name","sal"))
